@@ -1,0 +1,252 @@
+:root {
+    --bg-color: #0d1117;
+    --sidebar-color: #161b22;
+    --text-main: #adbac7;
+    --text-bright: #f0f6fc;
+    --accent: #58a6ff;
+    --card-bg: #1c2128;
+    --border: #30363d;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: var(--sidebar-color);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 35%;
+    background-color: var(--sidebar-color);
+    padding: 40px 30px;
+    border-right: 1px solid var(--border);
+}
+
+.photo-container {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1c2128;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 100%; 
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar h1 {
+    font-size: 1.6rem;
+    color: var(--text-bright);
+    margin-bottom: 5px;
+}
+
+.tagline {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.sidebar h3 {
+    font-size: 0.9rem;
+    color: var(--text-bright);
+    margin: 25px 0 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 5px;
+}
+
+.contact-info p {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.skill-tag {
+    display: inline-block;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin: 0 4px 8px 0;
+    font-family: 'Fira Code', monospace;
+    color: var(--text-bright);
+}
+
+/* --- Seção de Idiomas --- */
+.lang-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lang-row {
+    margin-bottom: 18px;
+}
+
+.lang-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.lang-info span {
+    font-size: 0.9rem;
+    color: var(--text-bright);
+    font-weight: 500;
+}
+
+.level-tag {
+    font-size: 0.7rem !important;
+    color: var(--accent) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    box-shadow: 0 0 8px var(--accent);
+}
+
+/* --- Main Content --- */
+.main-content {
+    width: 65%;
+    padding: 45px;
+    background-color: var(--bg-color);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: var(--text-bright);
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    margin-left: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 22px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.card-header h3 {
+    font-size: 1.1rem;
+    color: var(--text-bright);
+}
+
+.card-header span {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 15px 25px;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-bright);
+    background: var(--sidebar-color);
+    border-radius: 0 8px 8px 0;
+    margin-top: 50px;
+}
+
+/* --- Media Query para Mobile --- */
+@media (max-width: 850px) {
+    .container {
+        flex-direction: column;
+        margin: 10px;
+    }
+    .sidebar, .main-content {
+        width: 100%;
+    }
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+}
